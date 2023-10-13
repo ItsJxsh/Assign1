@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+
+public class AnimationScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
 
@@ -33,15 +34,15 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void Start()
     {
-        InvokeRepeating(nameof(NextFrame), animationTime, animationTime)
+        InvokeRepeating(nameof(NextFrame), animationTime, animationTime);
     }
 
     public void NextFrame()
     {
         animationFrame++;
-        if (loop && aniamtionFrame >= animationSprites.Length)
+        if (loop && animationFrame >= animationSprites.Length)
         {
-            animationFrame = 0
+            animationFrame = 0;
         }
         if (idle)
         {
