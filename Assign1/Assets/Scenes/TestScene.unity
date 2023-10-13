@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181717463}
   - component: {fileID: 181717462}
+  - component: {fileID: 181717464}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -207,6 +208,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181717464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181717461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd227bb85c56854b817ae0469e13c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSprite: {fileID: 0}
+  animationSprites: []
+  animationTime: 0.25
+  loop: 1
+  idle: 1
 --- !u!1 &289976316
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +515,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd227bb85c56854b817ae0469e13c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleSprite: {fileID: 0}
+  animationSprites: []
+  animationTime: 0.25
+  loop: 1
+  idle: 1
 --- !u!1 &930556387
 GameObject:
   m_ObjectHideFlags: 0
