@@ -26,22 +26,30 @@ public class Player : MonoBehaviour
         float yDir = 0.0f;
         if (Input.GetKey(KeyCode.W))
         {
+            gameObject.GetComponent<AnimationScript>().idle = false;
             yDir = 1.0f;
         }
 
         else if (Input.GetKey(KeyCode.S))
         {
+            gameObject.GetComponent<AnimationScript>().idle = false;
             yDir = -1.0f;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
+            gameObject.GetComponent<AnimationScript>().idle = false;
             xDir = -1.0f;
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
+            gameObject.GetComponent<AnimationScript>().idle = false;
             xDir = 1.0f;
+        }
+        else
+        {
+            gameObject.GetComponent<AnimationScript>().idle = true;
         }
 
         Vector2 direction = new Vector2(xDir, yDir).normalized;

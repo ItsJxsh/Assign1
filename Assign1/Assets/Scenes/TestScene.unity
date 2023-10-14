@@ -515,9 +515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd227bb85c56854b817ae0469e13c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 0}
-  animationSprites: []
-  animationTime: 0.25
+  idleSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  animationSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  animationTime: 0.3333333
   loop: 1
   idle: 1
 --- !u!1 &930556387
