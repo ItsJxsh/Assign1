@@ -6,17 +6,18 @@ public class Player : MonoBehaviour
 {
     public float speed = 0.0f;
     Rigidbody2D rb;
+    public GameObject bombPrefab;
+    public float explosionTime = 2.5f;
+    public int bombCount = 1;
+    private int bombsRemaining;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        // Normalization test (matches math diagram)
-        Vector2 test = new Vector2(3, 5);
-        Vector2 nTest = test.normalized;
-        Debug.Log(nTest);
-        Debug.Log(nTest.magnitude);
+        bombsRemaining = bombCount;
     }
+
 
     // Challenge: Rotate the player with E and Q, then move the player in that direction!
     void Update()
@@ -24,6 +25,11 @@ public class Player : MonoBehaviour
         float dt = Time.deltaTime;
         float xDir = 0.0f;
         float yDir = 0.0f;
+
+        if (Input.GetKeyDown(KeyCode.Space) && bombsRemaining > 0)
+        {
+            StartCoroutine(PlaceBomb());
+        }
         if (Input.GetKey(KeyCode.W))
         {
             gameObject.GetComponent<AnimationScript>().idle = false;
@@ -52,7 +58,21 @@ public class Player : MonoBehaviour
             gameObject.GetComponent<AnimationScript>().idle = true;
         }
 
+
         Vector2 direction = new Vector2(xDir, yDir).normalized;
         rb.velocity = direction * speed;
+    }
+
+
+    private IEnumerator PlaceBomb()
+    {
+        Vector2 position = transform.position;
+        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
+        bombsRemaining--;
+        Debug.Log("Bomb Placed");
+
+        yield return new WaitForSeconds(explosionTime);
+        Destroy(bomb);
+        bombsRemaining++;
     }
 }
