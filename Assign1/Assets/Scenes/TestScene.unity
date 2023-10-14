@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 362670496}
   - component: {fileID: 362670495}
   - component: {fileID: 362670499}
-  - component: {fileID: 362670498}
+  - component: {fileID: 362670502}
   - component: {fileID: 362670497}
   - component: {fileID: 362670500}
   - component: {fileID: 362670501}
@@ -298,7 +298,7 @@ Transform:
   m_GameObject: {fileID: 362670494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.94, y: -3.33, z: 0}
+  m_LocalPosition: {x: -6.94, y: -3.33, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -320,51 +320,13 @@ MonoBehaviour:
   bombPrefab: {fileID: 125395546796081140, guid: d317636e0fc9f28479d9854dba8373d1, type: 3}
   explosionTime: 2.5
   bombCount: 1
---- !u!61 &362670498
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362670494}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
+  explosionPrefab: {fileID: -4490566227882402826, guid: b1ebf34c840174c419ddf8a44ed52876, type: 3}
+  explosionLength: 2
+  explosionRadius: 1
+  explosionLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.4}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4}
-  m_EdgeRadius: 0
+    m_Bits: 64
+  destroyableTiles: {fileID: 1522278540}
 --- !u!50 &362670499
 Rigidbody2D:
   serializedVersion: 4
@@ -423,6 +385,41 @@ MonoBehaviour:
   animationTime: 0.3333333
   loop: 1
   idle: 1
+--- !u!58 &362670502
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362670494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.25}
+  serializedVersion: 2
+  m_Radius: 0.25
 --- !u!1 &930556387
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930556389}
   - component: {fileID: 930556388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +478,7 @@ GameObject:
   - component: {fileID: 1522278540}
   - component: {fileID: 1522278539}
   - component: {fileID: 1522278541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1229,7 @@ GameObject:
   - component: {fileID: 1579532478}
   - component: {fileID: 1579532477}
   - component: {fileID: 1579532479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PermanentTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
