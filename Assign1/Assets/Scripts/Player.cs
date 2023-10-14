@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
+    public int Health = 3;
     public float speed = 0.0f;
     Rigidbody2D rb;
     public GameObject bombPrefab;

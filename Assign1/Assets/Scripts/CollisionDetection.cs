@@ -9,13 +9,10 @@ public class CollisionDetection : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(gameObject.name + " is colliding with " + collision.gameObject.name);
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
+            gameObject.GetComponent<Player>().Health--;
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log(gameObject.name + " is no longer colliding with " + collision.gameObject.name);
-        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-    }
 }

@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca31a79ea1c6b7a43a8b0584126dfe36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 3
   speed: 4
   bombPrefab: {fileID: 125395546796081140, guid: d317636e0fc9f28479d9854dba8373d1, type: 3}
   explosionTime: 2.5
@@ -417,7 +418,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0, y: -0.2}
   serializedVersion: 2
   m_Radius: 0.25
 --- !u!1 &930556387
