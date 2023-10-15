@@ -53,5 +53,4 @@ public class AnimationScript : MonoBehaviour
             spriteRenderer.sprite = animationSprites[animationFrame];
         }
     }
-
 }

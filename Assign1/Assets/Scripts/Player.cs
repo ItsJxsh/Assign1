@@ -156,5 +156,4 @@ public class Player : MonoBehaviour
     {
        speed *= 2;
     }
-
 }
