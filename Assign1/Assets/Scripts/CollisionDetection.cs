@@ -7,9 +7,9 @@ using UnityEngine;
 // Trigger simply tests for overlap so you can respond to an event (ie doubling speed if in overlapping area)
 public class CollisionDetection : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        if (collision.CompareTag("Explosion"))
         {
             gameObject.GetComponent<Player>().Health--;
         }
