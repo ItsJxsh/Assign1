@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Boxes
   - Explosion
+  - ExtraBombs
+  - ExplosionRadius
+  - Speedup
   layers:
   - Default
   - TransparentFX

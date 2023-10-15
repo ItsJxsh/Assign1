@@ -6,7 +6,8 @@ using UnityEngine.Tilemaps;
 public class Player : MonoBehaviour
 {
     public int Health = 3;
-    public float speed = 0.0f;
+    public int score = 0;
+    public float speed = 4.0f;
     Rigidbody2D rb;
     public GameObject bombPrefab;
     public float explosionTime = 2.5f;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     public LayerMask explosionLayerMask;
 
     public Tilemap destroyableTiles;
+    public Tilemap itemTiles;
 
     void Start()
     {
@@ -33,6 +35,13 @@ public class Player : MonoBehaviour
         float dt = Time.deltaTime;
         float xDir = 0.0f;
         float yDir = 0.0f;
+
+        if (Health == 0)
+        {
+            Debug.Log("Game Over");
+            Debug.Log("Score:" + score);
+            Debug.Break();
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && bombsRemaining > 0)
         {
@@ -50,7 +59,7 @@ public class Player : MonoBehaviour
             yDir = -1.0f;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             gameObject.GetComponent<AnimationScript>().idle = false;
             xDir = -1.0f;
@@ -77,7 +86,6 @@ public class Player : MonoBehaviour
         Vector2 position = transform.position;
         GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
         bombsRemaining--;
-        Debug.Log("Bomb Placed");
 
         yield return new WaitForSeconds(explosionTime);
 
@@ -131,6 +139,22 @@ public class Player : MonoBehaviour
         if (tile != null)
         {
             destroyableTiles.SetTile(cell, null);
+            score += 100;
         }
     }
+
+    public void AddBomb()
+    {
+        bombCount++;
+        bombsRemaining++;
+    }
+    public void AddRadius()
+    {
+        explosionRadius++;
+    }
+    public void AddSpeed()
+    {
+       speed *= 2;
+    }
+
 }
